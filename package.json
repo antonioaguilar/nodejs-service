@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-service",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "echo \"Build done.\" && exit 1",
+    "test": "echo \"All tests done.\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "express": "^4.21.1"
+  }
+}
