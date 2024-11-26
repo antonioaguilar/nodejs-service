@@ -7,12 +7,12 @@ pipeline {
       parallel {
         stage('Build service') {
           steps {
-             echo ''
+             sh 'sleep 3s'
           }
         }
         stage('Build container image') {
           steps {
-             echo ''
+             sh 'sleep 5s'
           }
         }
       }
@@ -22,17 +22,17 @@ pipeline {
       parallel {
         stage('Unit Tests') {
           steps {
-             echo ''
+             sh 'sleep 3s'
           }
         }
         stage('Integration Tests') {
           steps {
-             echo ''
+             sh 'sleep 4s'
           }
         }
         stage('SonarQube Coverage') {
           steps {
-             echo ''
+             sh 'sleep 6s'
           }
         }
       }
@@ -42,28 +42,27 @@ pipeline {
       parallel {
         stage('E2E Cypress Tests') {
           steps {
-             echo ''
+             sh 'sleep 6s'
           }
         }
         stage('Postman REST Tests') {
           steps {
-             echo ''
+             sh 'sleep 3s'
           }
         }
         stage('K6 Load Tests') {
           steps {
-             echo ''
+             sh 'sleep 6s'
           }
         }
         stage('JMeter/BlazeMeter Tests') {
           steps {
-             echo ''
+             sh 'sleep 5s'
           }
         }
-
         stage('Regresion Testing (automated)') {
           steps {
-             echo ''
+             sh 'sleep 7s'
           }
         }
       }
@@ -73,27 +72,27 @@ pipeline {
       parallel {
         stage('SAST Scanning') {
           steps {
-             echo ''
+             sh 'sleep 2s'
           }
         }
         stage('Semgrep CVE audits') {
           steps {
-             echo ''
+             sh 'sleep 4s'
           }
         }
         stage('Artifactory SCA Scanning') {
           steps {
-             echo ''
+             sh 'sleep 5s'
           }
         }
         stage('SBOM generation') {
           steps {
-             echo ''
+             sh 'sleep 7s'
           }
         }
         stage('Container Image Scanning (SBOM)') {
           steps {
-             echo ''
+             sh 'sleep 10s'
           }
         }
       }
@@ -101,19 +100,19 @@ pipeline {
 
     stage('Compliance') {
       parallel {
-        stage('SBOM component report') {
+        stage('SBOM Report') {
           steps {
-             echo ''
+             sh 'sleep 2s'
           }
         }
         stage('License Scanning') {
           steps {
-             echo ''
+             sh 'sleep 4s'
           }
         }
         stage('API Documentation') {
           steps {
-             echo ''
+             sh 'sleep 5s'
           }
         }
       }
@@ -123,17 +122,17 @@ pipeline {
       parallel {
         stage('Artifactory Upload') {
           steps {
-             echo ''
+             sh 'sleep 3s'
           }
         }
         stage('SBOM Report') {
           steps {
-             echo ''
+             sh 'sleep 5s'
           }
         }
         stage('Artifact Report') {
           steps {
-             echo ''
+             sh 'sleep 7s'
           }
         }
       }
@@ -143,12 +142,12 @@ pipeline {
       parallel {
         stage('Deploy to Staging env') {
           steps {
-             echo ''
+             sh 'sleep 3s'
           }
         }
         stage('Deploy to QA env') {
           steps {
-             echo ''
+             sh 'sleep 3s'
           }
         }
       }
