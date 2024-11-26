@@ -69,7 +69,7 @@ pipeline {
       }
     }
 
-    stage('Compliance & Security') {
+    stage('Security') {
       parallel {
         stage('SAST Scanning') {
           steps {
@@ -86,17 +86,32 @@ pipeline {
              echo ''
           }
         }
-        stage('License Scanning') {
-          steps {
-             echo ''
-          }
-        }
         stage('SBOM generation') {
           steps {
              echo ''
           }
         }
         stage('Container Image Scanning (SBOM)') {
+          steps {
+             echo ''
+          }
+        }
+      }
+    }
+
+    stage('Compliance') {
+      parallel {
+        stage('SBOM component report') {
+          steps {
+             echo ''
+          }
+        }
+        stage('License Scanning') {
+          steps {
+             echo ''
+          }
+        }
+        stage('API Documentation') {
           steps {
              echo ''
           }
